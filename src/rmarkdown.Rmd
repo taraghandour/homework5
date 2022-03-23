@@ -23,10 +23,20 @@ create_package("homework5")
 nba=read.csv("~/Desktop/Modern_Data_Structures/homework5/data/raw/Seasons_Stats_NBA.csv")
 head(nba)
 
-nba %>% filter(Player=="LeBron James",Year==2004)  %>% select(PTS)
+count_pts =function(year){
+nba %>% filter(Player=="LeBron James",Year==year)  %>% select(PTS)}
+count_pts(2013)
 
-count_pts <- function(df,year,player){
-df %>% select(year,
+**Function 2:** Your input for this function should be an individual year.  Your output should be the oldest player in the NBA data for that year (if multiple players have the same age, then decide how to return a single player).
+
+#first attempt
+oldest_player =function(year){
+nba %>% group_by(Year) %>%
+summarise(new_age = max(Age)) %>%
+arrange(desc(new_age))
+return(new_age)}
+
+**Function 3:** Your input for this function should be an individual year.  Your function should limit the data for that year to include numeric continuous variables only (not categorical data).  Your output should be the correlation matrix for all numeric variables in the data for that year.  (Hint: use `cor(data)` to create correlation matrix
 ```
 
 Your input for this function should be an individual year.  Your output should be a data point of interest in the dataset for some player.
