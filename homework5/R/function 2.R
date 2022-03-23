@@ -8,4 +8,6 @@
 #' oldest_player()
 
 oldest_player =function(year){
-}
+  nba %>% select(Year,Age,Player) %>%
+    group_by(Year=year) %>% slice(which.max(Age))}
+
