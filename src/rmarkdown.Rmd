@@ -44,6 +44,11 @@ numeric_corr_matrix=function(year){
 
 library(homework5)
 ?oldest_player
+?count_pts
+?numeric_corr_matrix
+
+install_github("taraghandour/homework5")
+
 
 ```
 
