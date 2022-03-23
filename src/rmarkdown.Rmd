@@ -1,0 +1,32 @@
+---
+title: "homework 5"
+author: "tara"
+date: '2022-03-22'
+output: html_document
+---
+	**Function 1:** Your input for this function should be an individual year.  Your output should be a data point of interest in the dataset for some player.
+
+
+```{r setup, include=FALSE}
+library(devtools)
+library(roxygen2)
+library(tidyverse)
+```
+
+Creating my package: 
+```{r}
+install.packages("here")
+library(here)
+setwd("~/Desktop/Modern_Data_Structures/homework5") #set working directory
+getwd() #double checking wd
+create_package("homework5")
+nba=read.csv("~/Desktop/Modern_Data_Structures/homework5/data/raw/Seasons_Stats_NBA.csv")
+head(nba)
+
+nba %>% filter(Player=="LeBron James",Year==2004)  %>% select(PTS)
+
+count_pts <- function(df,year,player){
+df %>% select(year,
+```
+
+Your input for this function should be an individual year.  Your output should be a data point of interest in the dataset for some player.
