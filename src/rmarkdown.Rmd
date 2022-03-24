@@ -2,10 +2,10 @@
 title: "homework 5"
 author: "tara"
 date: '2022-03-22'
-output: html_document
+output: 
+  md_document:
+    variant: markdown_github
 ---
-	**Function 1:** Your input for this function should be an individual year.  Your output should be a data point of interest in the dataset for some player.
-
 
 ```{r setup, include=FALSE}
 library(devtools)
@@ -15,11 +15,6 @@ library(tidyverse)
 
 Creating my package and my functions:
 ```{r}
-install.packages("here")
-library(here)
-setwd("~/Desktop/Modern_Data_Structures/homework5") #set working directory
-getwd() #double checking wd
-create_package("homework5")
 nba=read.csv("~/Desktop/Modern_Data_Structures/homework5/data/raw/Seasons_Stats_NBA.csv")
 head(nba)
 
@@ -42,14 +37,12 @@ numeric_corr_matrix=function(year){
   return(cor(x))
 }
 
+devtools::install_github("taraghandour/homework5/homework5")
+
 library(homework5)
 ?oldest_player
 ?count_pts
 ?numeric_corr_matrix
 
-install_github("taraghandour/homework5")
-
-
 ```
 
-Your input for this function should be an individual year.  Your output should be a data point of interest in the dataset for some player.
